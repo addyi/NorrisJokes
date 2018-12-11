@@ -7,7 +7,7 @@ import org.koin.android.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
 val appModule = module {
-    single<NorrisRepository> { NorrisRepositoryImpl() }
+    single<NorrisRepository> { NorrisRepositoryImpl(get()) }
 
     viewModel { NorrisViewModel(get()) }
 }

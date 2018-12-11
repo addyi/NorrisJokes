@@ -1,9 +1,10 @@
 package de.eosn.norrisjokes
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import de.eosn.norrisjokes.viewmodel.NorrisViewModel
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        Log.d(tag, norrisViewModel.getJoke())
+        GlobalScope.launch {
+            norrisViewModel.getJoke()
+        }
     }
 }

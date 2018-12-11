@@ -1,5 +1,7 @@
 package de.eosn.norrisjokes.repo
 
+import arrow.core.Either
+
 interface NorrisRepository {
-    fun retrieveJoke(): String
+    suspend fun retrieveJoke(): Either<String?, Exception>
 }
