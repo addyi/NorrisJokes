@@ -1,7 +1,9 @@
 package de.eosn.norrisjokes
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import de.eosn.norrisjokes.viewmodel.NorrisViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -20,5 +22,11 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch {
             norrisViewModel.getJoke()
         }
+
+        norrisViewModel.chuckNorrisJokes.observe(this, Observer {
+            for (chuckNorrisJoke in it) {
+                Log.d(tag, chuckNorrisJoke.toString())
+            }
+        })
     }
 }

@@ -2,6 +2,7 @@ package de.eosn.norrisjokes
 
 import android.app.Application
 import de.eosn.norrisjokes.module.appModule
+import de.eosn.norrisjokes.module.localDataStore
 import de.eosn.norrisjokes.module.remoteDataSourceModule
 import org.koin.android.ext.android.startKoin
 
@@ -11,6 +12,6 @@ class NorrisApplication : Application() {
         super.onCreate()
 
         // Start Koin
-        startKoin(this, listOf(appModule, remoteDataSourceModule), loadPropertiesFromFile = true)
+        startKoin(this, listOf(appModule, remoteDataSourceModule, localDataStore), loadPropertiesFromFile = true)
     }
 }

@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
+apply plugin: 'kotlin-kapt'
+
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -29,6 +31,8 @@ ext {
     okhttp_version = '3.12.0'
     retrofit_version = '2.5.0'
     arrow_version = "0.8.1"
+    room_version="2.0.0"
+    lifecycle_version="2.0.0"
 }
 
 dependencies {
@@ -51,9 +55,14 @@ dependencies {
 
     implementation "io.arrow-kt:arrow-core:$arrow_version"
 
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1-alpha01'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1-alpha01'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
 
 }
