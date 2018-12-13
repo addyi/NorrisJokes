@@ -12,7 +12,7 @@ class NorrisRepositoryImpl(
 
     private val chuckNorrisJokes: LiveData<List<ChuckNorrisJoke>> = chuckNorrisJokeDAO.getAllJokes()
 
-    override suspend fun retrieveJoke(): Either<String, Exception> {
+    override suspend fun retrieveRandomJoke(): Either<ChuckNorrisJoke, Exception> {
 
         val response = chuckNorrisJokeService.getRandomJoke().await()
 
@@ -20,12 +20,12 @@ class NorrisRepositoryImpl(
             val body = response.body()
             if (body != null) {
                 chuckNorrisJokeDAO.insertJokes(body)
-                Either.left(body.joke)
+                Either.left(body)
             } else {
-                Either.right(ParsingException("Somehow joke is null. Joke: $body"))
+                Either.right(EmptyJokeException("Somehow joke is null. Joke: $body"))
             }
         } else {
-            Either.right(NetworkRequestException("Something went wrong. Response Code: ${response.code()}"))
+            Either.right(NetworkException("Something went wrong. Response Code: ${response.code()}"))
         }
     }
 
@@ -34,5 +34,5 @@ class NorrisRepositoryImpl(
     }
 }
 
-class NetworkRequestException(msg: String = "") : Exception(msg)
-class ParsingException(msg: String = "") : Exception(msg)
+class NetworkException(msg: String = "") : Exception(msg)
+class EmptyJokeException(msg: String = "") : Exception(msg)

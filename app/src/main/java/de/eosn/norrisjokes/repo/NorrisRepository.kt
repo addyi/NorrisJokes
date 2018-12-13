@@ -4,6 +4,6 @@ import androidx.lifecycle.LiveData
 import arrow.core.Either
 
 interface NorrisRepository {
-    suspend fun retrieveJoke(): Either<String, Exception>
+    suspend fun retrieveRandomJoke(): Either<ChuckNorrisJoke, Exception>
     fun getJokes(): LiveData<List<ChuckNorrisJoke>>
 }
