@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import de.eosn.norrisjokes.repo.ChuckNorrisJoke
+import de.eosn.norrisjokes.model.ChuckNorrisJoke
 
 @Dao
 interface ChuckNorrisJokeDAO {

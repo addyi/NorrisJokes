@@ -1,6 +1,6 @@
 package de.eosn.norrisjokes.repo.remote
 
-import de.eosn.norrisjokes.repo.ChuckNorrisJoke
+import de.eosn.norrisjokes.model.ChuckNorrisJoke
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package de.eosn.norrisjokes.repo
+package de.eosn.norrisjokes.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

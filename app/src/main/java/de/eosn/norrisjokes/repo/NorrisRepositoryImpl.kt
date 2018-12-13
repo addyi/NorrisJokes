@@ -2,6 +2,7 @@ package de.eosn.norrisjokes.repo
 
 import androidx.lifecycle.LiveData
 import arrow.core.Either
+import de.eosn.norrisjokes.model.ChuckNorrisJoke
 import de.eosn.norrisjokes.repo.local.ChuckNorrisJokeDAO
 import de.eosn.norrisjokes.repo.remote.ChuckNorrisJokeService
 

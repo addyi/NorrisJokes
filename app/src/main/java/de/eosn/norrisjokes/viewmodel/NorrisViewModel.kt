@@ -3,7 +3,7 @@ package de.eosn.norrisjokes.viewmodel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import arrow.core.Either
-import de.eosn.norrisjokes.repo.ChuckNorrisJoke
+import de.eosn.norrisjokes.model.ChuckNorrisJoke
 import de.eosn.norrisjokes.repo.NorrisRepository
 
 class NorrisViewModel(private val chuckNorrisRepository: NorrisRepository) : ViewModel() {
