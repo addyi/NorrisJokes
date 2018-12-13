@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">NorrisJokes</string>
+    <string name="app_name">Norris Jokes</string>
+    <string name="get_chuck_norris_joke">Random Joke</string>
 </resources>
